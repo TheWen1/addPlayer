@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- put the form here-->
+      <form action="#">
+        <fieldset>
+          <h4>Add player</h4>
+          <label for="name"
+            >Name
+            <input id="name" name="username" type="text" />
+          </label>
+          <label for="lvl"
+            >Level
+            <input id="lvl" name="level" type="number" />
+          </label>
+          <input id="addPlayer" type="submit" value="Add player" />
+          <button id="letPlayerPlay" type="button">
+            Let player play
+          </button>
+        </fieldset>
+      </form>
+      <div id="waitingQueue">
+        <!-- the function refresh act inside this div -->
+      </div>
+    </div>
+
+    <script src="src/index.ts"></script>
+  </body>
+</html>
