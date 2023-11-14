@@ -1,12 +1,12 @@
 import "./styles.css";
-import {Player} from "./model"
+import {Player, activePlayers} from "./model"
 // This is how to import something you have written in
 // an other file. Once imported, it is now in
 // the scope of this file and can be used.
 import {
   queue,
   addToWaitingQueue,
-  removeFromWaitingQueue
+  removeFromWaitingQueue, 
 } from "./representation";
 
 /**
@@ -27,6 +27,8 @@ function addPlayer(event) {
         level: Number(userLevel)
       };
       addToWaitingQueue(player);
+
+      event.target.reset();
 
       refresh();
   }
@@ -66,8 +68,21 @@ function refresh() {
     for (let i = 0; i < queue.length; i++) {
       const player = queue[i];
       const playerDiv = document.createElement("div");
-      playerDiv.innerText = `(username ${player.username}) (level ${player.level})`;
+      playerDiv.innerText = `(${player.username}) (level ${player.level})`;
       queueList.appendChild(playerDiv);
+    }
+  }
+
+  const activePlayerList = document.getElementById("activePlayers");
+
+  if (activePlayerList) {
+    activePlayerList.innerHTML = "";
+
+    for (let i = 0; i < activePlayers.length; i++) {
+      const player = activePlayers[i];
+      const playerDiv = document.createElement("div");
+      playerDiv.innerText = `(${player.username})`;
+      activePlayerList.appendChild(playerDiv);
     }
   }
 }
@@ -82,3 +97,4 @@ document.querySelector("form")?.addEventListener("submit", addPlayer);
 
 document
   .querySelector("#letPlayerPlay")?.addEventListener("click", letPlayerPlay);
+

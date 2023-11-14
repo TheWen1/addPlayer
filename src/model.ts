@@ -6,10 +6,10 @@ export type Player = {
 // This array contains all the waiting players.
 // It is the data of your application.
 export const queue: Player[] = [];
-//export const activePlayers = [];
+export const activePlayers: Player[] = [];
 
 export function addToWaitingQueue(player: Player) {
-  // Ticket 2: implement your code of ticket 2 here
+ 
   if (!player.username || !player.level) {
     alert("Ho no :-o !");
     return false;
@@ -27,11 +27,19 @@ export function addToWaitingQueue(player: Player) {
 // Ticket 3: create the removeFromWaitingQueue here
 export function removeFromWaitingQueue() {
   if (queue.length > 0) {
-    queue.shift();
+    const removedPlayer = queue.shift();
+    if (removedPlayer) {
+    addActivePlayer(removedPlayer);
+    }
     return true;
   } else {
     return false;
   }
 }
+
+export function addActivePlayer(player: Player) {
+ activePlayers.push(player);
+}
+
 
 
