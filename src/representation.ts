@@ -1,1 +1,1 @@
-export { queue, addToWaitingQueue, removeFromWaitingQueue } from "./model";
+export { queue, addToWaitingQueue, removeFromWaitingQueue, addActivePlayer } from "./model";

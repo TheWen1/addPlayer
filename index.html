@@ -9,7 +9,7 @@
     <div id="app">
       <!-- put the form here-->
       <form action="#">
-        <fieldset>
+        <fieldset id="etape1">
           <h4>Add player</h4>
           <label for="name"
             >Name
@@ -20,16 +20,26 @@
             <input id="lvl" name="level" type="number" />
           </label>
           <input id="addPlayer" type="submit" value="Add player" />
-          <button id="letPlayerPlay" type="button">
-            Let player play
-          </button>
         </fieldset>
       </form>
+      <form>
+      <fieldset>  
+        <h4>Waiting list</h4>
       <div id="waitingQueue">
         <!-- the function refresh act inside this div -->
       </div>
-    </div>
-
+      <button id="letPlayerPlay" type="button">
+        Let player play
+      </button>
+    </fieldset>
+  </form>
+  <form>
+    <fieldset>
+      <h4>Players playing</h4>
+      <div id="activePlayers"></div>
+    </fieldset>
+  </form>
+      </div>
     <script src="src/index.ts"></script>
   </body>
 </html>
