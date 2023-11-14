@@ -34,8 +34,4 @@ export function removeFromWaitingQueue() {
   }
 }
 
-//export function addActivePlayer(player) {
-// activePlayers.push(player.username);
-//}
 
-//function removeActivePlayer() {}
