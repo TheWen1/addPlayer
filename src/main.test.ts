@@ -1,27 +1,27 @@
 import {describe, expect, jest, test} from '@jest/globals';
-import * as code from "./model";
+import * as model from "./model";
 
 global.alert = jest.fn();
 
 describe("Ticket 2", function () {
   // Business tests
   test("addToWaitingQueue is defined", function () {
-    expect(code.addToWaitingQueue).toBeDefined();
+    expect(model.addToWaitingQueue).toBeDefined();
   });
 
   test("accept player", function () {
     expect(
-      code.addToWaitingQueue({ username: "Fraktar", level: 1 })
+      model.addToWaitingQueue({ username: "Fraktar", level: 1 })
     ).toBeTruthy();
   });
 
   test("reject player", function () {
     expect(
-      code.addToWaitingQueue({ username: "Fraktar", level: 1 })
+      model.addToWaitingQueue({ username: "Fraktar", level: 1 })
     ).toBeFalsy();
-    expect(code.addToWaitingQueue({ username: "", level: 1 })).toBeFalsy();
+    expect(model.addToWaitingQueue({ username: "", level: 1 })).toBeFalsy();
     expect(
-      code.addToWaitingQueue({ username: "", level: undefined as unknown as number })
+      model.addToWaitingQueue({ username: "", level: undefined as unknown as number })
     ).toBeFalsy();
   });
 });
