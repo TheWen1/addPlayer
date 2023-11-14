@@ -1,4 +1,7 @@
+import {describe, expect, jest, test} from '@jest/globals';
 import * as code from "./model";
+
+global.alert = jest.fn();
 
 describe("Ticket 2", function () {
   // Business tests
@@ -18,7 +21,7 @@ describe("Ticket 2", function () {
     ).toBeFalsy();
     expect(code.addToWaitingQueue({ username: "", level: 1 })).toBeFalsy();
     expect(
-      code.addToWaitingQueue({ username: "", level: undefined })
+      code.addToWaitingQueue({ username: "", level: undefined as unknown as number })
     ).toBeFalsy();
   });
 });
