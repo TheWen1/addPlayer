@@ -20,9 +20,12 @@ export function addToWaitingQueue(player: Player) {
       return false;
     }
   }
+
   queue.push(player);
   return true;
 }
+
+
 
 // Ticket 3: create the removeFromWaitingQueue here
 export function removeFromWaitingQueue() {
@@ -37,7 +40,7 @@ export function removeFromWaitingQueue() {
   }
 }
 
-export function addActivePlayer(player: Player) {
+ function addActivePlayer(player: Player) {
  activePlayers.push(player);
 }
 
